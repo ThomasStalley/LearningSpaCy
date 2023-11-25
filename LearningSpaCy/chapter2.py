@@ -5,8 +5,7 @@ from spacy.matcher import Matcher
 from spacy.matcher import PhraseMatcher
 from spacy.tokens import Doc, Span
 
-# ------------------------------------------------------------------------------------------------------------------ 2.1
-print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.1")
+print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.1")
 
 # Vocab is used to store data used across multiple documents.
 # Spacy encodes all strings to hash values, to use less memory.
@@ -29,8 +28,7 @@ print("-> lexeme.text:", lexeme.text)  # text
 print("-> lexeme.orth:", lexeme.orth)  # hash
 print("-> lexeme.is_alpha:", lexeme.is_alpha)  # example lexical attribute
 
-# ------------------------------------------------------------------------------------------------------------------ 2.2
-print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.2")
+print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.2")
 
 nlp = spacy.blank("en")
 sample_text = "I have a cat"
@@ -52,8 +50,7 @@ person_string = nlp.vocab.strings[person_hash]
 print("-> person_hash:", person_hash)
 print("-> person_string:", person_string)
 
-# ------------------------------------------------------------------------------------------------------------------ 2.4
-print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.4")
+print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.4")
 
 nlp = spacy.blank("en")
 
@@ -73,8 +70,7 @@ doc.ents = [span_with_label]
 # -> Use token attributes if available – for example, token.i for the token index.
 # -> Don't forget to pass in the shared vocab.
 
-# ------------------------------------------------------------------------------------------------------------------ 2.5
-print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.5")
+print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.5")
 
 nlp = spacy.blank("en")
 words = ["spaCy", "is", "cool", "!"]
@@ -94,8 +90,7 @@ spaces = [False, True, False, False, False]
 doc = Doc(nlp.vocab, words=words, spaces=spaces)
 print(f"\nManually created doc: \"{doc.text}\"")
 
-# ------------------------------------------------------------------------------------------------------------------ 2.6
-print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.6")
+print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.6")
 
 nlp = spacy.blank("en")
 
@@ -113,8 +108,7 @@ print(f"\nManually created span: \"{span.text}\"")
 doc.ents = [span]
 print("\nSpan added to doc's entities:", [(ent.text, ent.label_) for ent in doc.ents])
 
-# ------------------------------------------------------------------------------------------------------------------ 2.7
-print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.7")
+print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.7")
 
 sample_text = "Berlin looks like a nice city"
 print(f"\nSample text: \"{sample_text}\"")
@@ -138,8 +132,7 @@ for token in doc:  # Loop through tokens in the doc
             if next_token.pos_ == "VERB":  # is next token a verb?
                 print("-> Found proper noun before a verb (using if token.pos_ == \"PROPN\" logic):", token.text)
 
-# ------------------------------------------------------------------------------------------------------------------ 2.8
-print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.8")
+print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.8")
 
 # Word vectors and semantic similarity (src: https://course.spacy.io/en/chapter2):
 # -> spaCy can compare two objects and predict similarity, using:
@@ -212,16 +205,14 @@ print(f"\nDoc1: \"{doc1.text}\"")
 print(f"Doc2: \"{doc2.text}\"")
 print("-> Similarity score:", doc1.similarity(doc2))
 
-# ------------------------------------------------------------------------------------------------------------------ 2.9
-print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.9")
+print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.9")
 
 nlp = spacy.load("en_core_web_md")
 doc = nlp("Two bananas in pyjamas")
 bananas_vector = doc[1].vector
 print("\nVector the the token \"bananas\":\n", bananas_vector)
 
-# ----------------------------------------------------------------------------------------------------------------- 2.10
-print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.10")
+print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.10")
 
 nlp = spacy.load("en_core_web_md")
 doc1 = nlp("It's a warm summer day")
@@ -245,8 +236,7 @@ print(f"\nSpan1: \"{span1}\"")
 print(f"Span2: \"{span2}\"")
 print("-> Similarity score:", span1.similarity(span2))
 
-# ----------------------------------------------------------------------------------------------------------------- 2.11
-print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.11")
+print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.11")
 
 # Statistical models:
 # -> Use cases: application needs to generalize based on examples
@@ -306,14 +296,11 @@ for match_id, start, end in matcher(doc):
     span = doc[start:end]
     print("-> Matched span (w/ PhraseMatcher):", span.text)
 
-# ----------------------------------------------------------------------------------------------------------------- 2.12
-
 # pattern = [{"LOWER": "silicon"}, {"LOWER": "valley"}]
-# The pattern matches "SILICON VALLEY", or "Silicon Valley" etc, as when these are set to lower() they match the pattern
-# Whitespaces dont need to be added to patterns, inbetween words/tokens
+# "The pattern matches any span, that when they are set to lower() they match the pattern
+# "Whitespaces don't need to be added to patterns, inbetween words/tokens
 
-# ----------------------------------------------------------------------------------------------------------------- 2.13
-print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.13")
+print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.13")
 
 nlp = spacy.load("en_core_web_sm")
 sample_text = (
@@ -338,8 +325,7 @@ matcher.add(key="AD_FREE_VIEWING_PATTERN", patterns=[add_free_viewing_pattern])
 for match_id, start, end in matcher(doc):
     print(f"-> Pattern Key: \"{doc.vocab.strings[match_id]}\", Matched Span: \"{doc[start:end].text}\"")
 
-# ----------------------------------------------------------------------------------------------------------------- 2.14
-print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.14")
+print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.14")
 
 with open("SampleData/countries.json", encoding="utf8") as file:
     COUNTRIES = json.loads(file.read())
@@ -356,8 +342,7 @@ matches = matcher(doc)
 for match_id, start, end in matches:
     print(f"-> Matched country from sample_text: {doc[start:end]}")
 
-# ----------------------------------------------------------------------------------------------------------------- 2.15
-print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.15")
+print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.15")
 
 with open("SampleData/prose.txt", encoding="utf8") as file:
     TEXT = file.read()

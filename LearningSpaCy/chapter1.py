@@ -1,8 +1,7 @@
 import spacy
 from spacy.matcher import Matcher
 
-# ------------------------------------------------------------------------------------------------------------------ 1.1
-print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 1.1")
+print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 1.1")
 # Create a blank English nlp object, input sample text:
 nlp = spacy.blank("en")
 
@@ -27,8 +26,7 @@ print("is_alpha:", [token.is_alpha for token in doc])
 print("is_punct:", [token.is_punct for token in doc])
 print("like_num:", [token.like_num for token in doc])
 
-# ------------------------------------------------------------------------------------------------------------------ 1.2
-print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 1.2")
+print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 1.2")
 # Create the German nlp object:
 nlp = spacy.blank("de")
 
@@ -45,8 +43,8 @@ print(f"\nSample text: \"{sample_text}\"")
 doc = nlp(sample_text)
 print("\nES doc:", doc.text)
 
-# ------------------------------------------------------------------------------------------------------------------ 1.3
-print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 1.3")
+print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 1.3")
+
 nlp = spacy.blank("en")
 
 sample_text = "I like tree kangaroos and narwhals."
@@ -59,8 +57,7 @@ print("\ntree_kangaroos span:", tree_kangaroos.text)
 tree_kangaroos_and_narwhals = doc[2:]
 print("\ntree_kangaroos_and_narwhals span:", tree_kangaroos_and_narwhals.text, "\n")
 
-# ------------------------------------------------------------------------------------------------------------------ 1.4
-print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 1.4")
+print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 1.4")
 nlp = spacy.blank("en")
 
 sample_text = "In 1990, more than 60% of people in East Asia were in extreme poverty. Now less than 4% are."
@@ -74,8 +71,7 @@ for token in doc:
         if next_token.text == "%":
             print("Percentage found:", token.text)
 
-# ------------------------------------------------------------------------------------------------------------------ 1.5
-print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 1.5")
+print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 1.5")
 # Load in English pipeline:
 nlp = spacy.load("en_core_web_sm")
 
@@ -97,8 +93,7 @@ for ent in doc.ents:
     print("Predicted label:", ent.label_)
     print("Explained label:", spacy.explain(ent.label_))
 
-# ------------------------------------------------------------------------------------------------------------------ 1.8
-print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 1.8")
+print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 1.8")
 nlp = spacy.load("en_core_web_sm")
 sample_text = "It’s official: Apple is the first U.S. public company to reach a $1 trillion market value"
 print(f"\nSample text: \"{sample_text}\"")
@@ -118,8 +113,7 @@ for ent in doc.ents:
     print("Predicted label:", ent.label_)
     print("Explained label:", spacy.explain(ent.label_))
 
-# ------------------------------------------------------------------------------------------------------------------ 1.9
-print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 1.9")
+print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 1.9")
 
 nlp = spacy.load("en_core_web_sm")
 sample_text = "Upcoming iPhone X release date leaked as Apple reveals pre-orders"
@@ -135,8 +129,7 @@ for ent in doc.ents:
 iphone_x = doc[1:3]
 print("\nMissing entity:", iphone_x.text)
 
-# ----------------------------------------------------------------------------------------------------------------- 1.10
-print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 1.10")
+print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 1.10")
 
 # Matching with chosen words:
 nlp = spacy.load("en_core_web_sm")
@@ -198,8 +191,7 @@ for match_id, start, end in matches:
     matched_span = doc[start:end]
     print("--> Matched text using matcher:", matched_span.text)
 
-# ----------------------------------------------------------------------------------------------------------------- 1.11
-print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 1.11")
+print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 1.11")
 
 nlp = spacy.load("en_core_web_sm")
 sample_text = "Upcoming iPhone X release date leaked as Apple reveals pre-orders"
@@ -215,8 +207,7 @@ for match_id, start, end in matches:
     matched_span = doc[start:end]
     print("--> Matched text using matcher:", matched_span.text)
 
-# ----------------------------------------------------------------------------------------------------------------- 1.12
-print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 1.12")
+print("\n- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 1.12")
 
 # Matching IOS Version:
 nlp = spacy.load("en_core_web_sm")

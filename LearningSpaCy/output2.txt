@@ -1,4 +1,4 @@
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.1
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.1
 
 Sample text: "I love coffee"
 -> hash value: 3197928453018144401
@@ -7,7 +7,7 @@ Sample text: "I love coffee"
 -> lexeme.orth: 3197928453018144401
 -> lexeme.is_alpha: True
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.2
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.2
 
 Sample text: "I have a cat"
 -> cat_hash: 5439657043933447811
@@ -17,11 +17,11 @@ Sample text: "David Bowie is a PERSON"
 -> person_hash: 380
 -> person_string: PERSON
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.4
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.4
 
 Manually created doc: "Hello world!"
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.5
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.5
 
 Manually created doc: "spaCy is cool!"
 
@@ -29,7 +29,7 @@ Manually created doc: "Go, get started!"
 
 Manually created doc: "Oh, really?!"
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.6
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.6
 
 Manually created doc: "I like David Bowie"
 
@@ -37,13 +37,13 @@ Manually created span: "David Bowie"
 
 Span added to doc's entities: [('David Bowie', 'PERSON')]
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.7
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.7
 
 Sample text: "Berlin looks like a nice city"
 -> Found proper noun before a verb (using if part_of_speech_tag == "PROPN" logic): Berlin
 -> Found proper noun before a verb (using if token.pos_ == "PROPN" logic): Berlin
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.8
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.8
 
 Doc 1: "I like fast food"
 Doc 2: "I like pizza"
@@ -112,7 +112,7 @@ Doc1: "I like cats"
 Doc2: "I hate cats"
 -> Similarity score: 0.9530093158841214
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.9
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.9
 
 Vector the the token "bananas":
  [-2.1689e-01 -2.5989e+00 -1.3144e+00  2.2500e+00 -4.6767e-01 -2.0695e+00
@@ -166,7 +166,7 @@ Vector the the token "bananas":
  -1.6785e+00  2.6610e+00  1.0343e+00 -1.4297e+00  1.4563e+00 -2.0388e+00
  -1.4377e+00 -9.7985e-01  2.9488e+00 -2.7107e-01 -2.4010e-01 -1.3845e-01]
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.10
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.10
 
 Doc1: "It's a warm summer day"
 Doc2: "It's sunny outside"
@@ -180,7 +180,7 @@ Span1: "great restaurant"
 Span2: "really nice bar"
 -> Similarity score: 0.6348509788513184
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.11
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.11
 
 Sample text: "I have a Golden Retriever"
 -> Matched span (w/ Matcher): Golden Retriever
@@ -191,7 +191,7 @@ Sample text: "I have a Golden Retriever"
 Sample text: "I have a Golden Retriever"
 -> Matched span (w/ PhraseMatcher): Golden Retriever
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.13
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.13
 
 Sample text: "Twitch Prime, the perks program for Amazon Prime members offering free loot, games and other benefits, is ditching one of its best features: ad-free viewing. According to an email sent out to Amazon Prime members today, ad-free viewing will no longer be included as a part of Twitch Prime for new members, beginning on September 14. However, members with existing annual subscriptions will be able to continue to enjoy ad-free viewing until their subscription comes up for renewal. Those with monthly subscriptions will have access to ad-free viewing until October 15."
 -> Pattern Key: "AMAZON_PRIME_PATTERN", Matched Span: "Amazon Prime"
@@ -201,13 +201,13 @@ Sample text: "Twitch Prime, the perks program for Amazon Prime members offering 
 -> Pattern Key: "AD_FREE_VIEWING_PATTERN", Matched Span: "ad-free viewing"
 -> Pattern Key: "AD_FREE_VIEWING_PATTERN", Matched Span: "ad-free viewing"
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.14
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.14
 
 Sample text: "Czech Republic may help Slovakia protect its airspace"
 -> Matched country from sample_text: Czech Republic
 -> Matched country from sample_text: Slovakia
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.15
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 2.15
 
 Sample text: "After the Cold War, the UN saw a radical expansion in its peacekeeping duties, taking on more missions in ten years than it had in the previous four decades.Between 1988 and 2000, the number of adopted Security Council resolutions more than doubled, and the peacekeeping budget increased more than tenfold. The UN negotiated an end to the Salvadoran Civil War, launched a successful peacekeeping mission in Namibia, and oversaw democratic elections in post-apartheid South Africa and post-Khmer Rouge Cambodia. In 1991, the UN authorized a US-led coalition that repulsed the Iraqi invasion of Kuwait. Brian Urquhart, Under-Secretary-General from 1971 to 1985, later described the hopes raised by these successes as a "false renaissance" for the organization, given the more troubled missions that followed. Though the UN Charter had been written primarily to prevent aggression by one nation against another, in the early 1990s the UN faced a number of simultaneous, serious crises within nations such as Somalia, Haiti, Mozambique, and the former Yugoslavia. The UN mission in Somalia was widely viewed as a failure after the US withdrawal following casualties in the Battle of Mogadishu, and the UN mission to Bosnia faced "worldwide ridicule" for its indecisive and confused mission in the face of ethnic cleansing. In 1994, the UN Assistance Mission for Rwanda failed to intervene in the Rwandan genocide amid indecision in the Security Council. Beginning in the last decades of the Cold War, American and European critics of the UN condemned the organization for perceived mismanagement and corruption. In 1984, the US President, Ronald Reagan, withdrew his nation's funding from UNESCO (the United Nations Educational, Scientific and Cultural Organization, founded 1946) over allegations of mismanagement, followed by Britain and Singapore. Boutros Boutros-Ghali, Secretary-General from 1992 to 1996, initiated a reform of the Secretariat, reducing the size of the organization somewhat. His successor, Kofi Annan (1997–2006), initiated further management reforms in the face of threats from the United States to withhold its UN dues. In the late 1990s and 2000s, international interventions authorized by the UN took a wider variety of forms. The UN mission in the Sierra Leone Civil War of 1991–2002 was supplemented by British Royal Marines, and the invasion of Afghanistan in 2001 was overseen by NATO. In 2003, the United States invaded Iraq despite failing to pass a UN Security Council resolution for authorization, prompting a new round of questioning of the organization's effectiveness. Under the eighth Secretary-General, Ban Ki-moon, the UN has intervened with peacekeepers in crises including the War in Darfur in Sudan and the Kivu conflict in the Democratic Republic of Congo and sent observers and chemical weapons inspectors to the Syrian Civil War. In 2013, an internal review of UN actions in the final battles of the Sri Lankan Civil War in 2009 concluded that the organization had suffered "systemic failure". One hundred and one UN personnel died in the 2010 Haiti earthquake, the worst loss of life in the organization's history. The Millennium Summit was held in 2000 to discuss the UN's role in the 21st century. The three day meeting was the largest gathering of world leaders in history, and culminated in the adoption by all member states of the Millennium Development Goals (MDGs), a commitment to achieve international development in areas such as poverty reduction, gender equality, and public health. Progress towards these goals, which were to be met by 2015, was ultimately uneven. The 2005 World Summit reaffirmed the UN's focus on promoting development, peacekeeping, human rights, and global security. The Sustainable Development Goals were launched in 2015 to succeed the Millennium Development Goals. In addition to addressing global challenges, the UN has sought to improve its accountability and democratic legitimacy by engaging more with civil society and fostering a global constituency. In an effort to enhance transparency, in 2016 the organization held its first public debate between candidates for Secretary-General. On 1 January 2017, Portuguese diplomat António Guterres, who previously served as UN High Commissioner for Refugees, became the ninth Secretary-General. Guterres has highlighted several key goals for his administration, including an emphasis on diplomacy for preventing conflicts, more effective peacekeeping efforts, and streamlining the organization to be more responsive and versatile to global needs."
 -> span.root.head.text: in, span.text: Namibia
