@@ -1,0 +1,263 @@
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 3.1
+
+nlp: <spacy.lang.en.English object at 0x11ec06d70>
+
+nlp.pipe_names:
+-> tok2vec
+-> tagger
+-> parser
+-> attribute_ruler
+-> lemmatizer
+-> ner
+
+nlp.pipeline:
+-> ('tok2vec', <spacy.pipeline.tok2vec.Tok2Vec object at 0x11ed17b20>)
+-> ('tagger', <spacy.pipeline.tagger.Tagger object at 0x11ed17ac0>)
+-> ('parser', <spacy.pipeline.dep_parser.DependencyParser object at 0x11ebebbc0>)
+-> ('attribute_ruler', <spacy.pipeline.attributeruler.AttributeRuler object at 0x11ee66880>)
+-> ('lemmatizer', <spacy.lang.en.lemmatizer.EnglishLemmatizer object at 0x11eeaa440>)
+-> ('ner', <spacy.pipeline.ner.EntityRecognizer object at 0x11ebeba70>)
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 3.4
+
+NLP Pipenames: ['custom_component', 'tok2vec', 'tagger', 'parser', 'attribute_ruler', 'lemmatizer', 'ner']
+
+nlp("Hello world!"):
+-> Doc length: 3
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 3.4
+
+NLP Pipenames: ['length_component', 'tok2vec', 'tagger', 'parser', 'attribute_ruler', 'lemmatizer', 'ner']
+
+nlp("This is a sentence."):
+-> This document is 5 tokens long.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 3.7
+
+animal_patterns: [Golden Retriever, cat, turtle, Rattus norvegicus]
+
+NLP Pipenames: ['tok2vec', 'tagger', 'parser', 'attribute_ruler', 'lemmatizer', 'ner', 'animal_component']
+
+Sample text: "I have a cat and a Golden Retriever"
+
+Entities (text & label) overwritten by custom component to match chosen animals:
+-> cat ANIMAL
+-> Golden Retriever ANIMAL
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 3.8
+
+Sample text: "The sky is blue."
+
+Token: "blue"
+-> token._.is_color: True
+-> token.text: blue
+
+Span: "sky is blue"
+-> token._.has_color: True
+-> token.text: sky is blue
+
+Span: "The sky"
+-> span._.has_color: False
+-> span.text: The sky
+
+Doc: "The sky is blue."
+-> doc._.has_token("blue"): True
+-> doc._.has_token("cloud"): False
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 3.9
+
+Sample text: "I live in Spain."
+
+(token._.is_country, token.text) for token in sample_text:
+-> ('I', False)
+-> ('live', False)
+-> ('in', False)
+-> ('Spain', True)
+-> ('.', False)
+
+Sample text: "All generalizations are false, including this one."
+
+Using token extension "reversed":
+-> Reversed: llA
+-> Reversed: snoitazilareneg
+-> Reversed: era
+-> Reversed: eslaf
+-> Reversed: ,
+-> Reversed: gnidulcni
+-> Reversed: siht
+-> Reversed: eno
+-> Reversed: .
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 3.9
+
+Sample text: "The museum closed for five years in 2012."
+-> has_number: True
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 3.10
+
+Sample text: "Hello world, this is a sentence."
+
+Span: Hello world
+
+Using span extension "to_html":
+-> <strong>Hello world</strong>
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 3.11
+
+Sample text: "In over fifty years from his very first recordings right through to his last album, David Bowie was at the vanguard of contemporary culture."
+
+Doc entities (ent.text, ent._.wikipedia_url):
+-> fifty years None
+-> first None
+-> David Bowie https://en.wikipedia.org/w/index.php?search=David_Bowie
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 3.12
+
+nlp:
+-> <spacy.lang.en.English object at 0x11ea4e0b0>
+
+nlp.pipe_names:
+-> countries_component
+
+Sample text: "Czech Republic may help Slovakia protect its airspace"
+
+Entities (text, label, capital) in sample text:
+-> Czech Republic GPE Prague
+-> Slovakia GPE Bratislava
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 3.13
+
+Data inserted into nlp.pipe:
+->[('This is a text', {'id': 1, 'page_number': 15}), ('And another text', {'id': 2, 'page_number': 16})]
+
+Data, Context in nlp.pipe:
+-> doc: This is a text, context: {'id': 1, 'page_number': 15}
+-> doc: And another text, context: {'id': 2, 'page_number': 16}
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 3.14
+
+Adjectives in tweets.json:
+-> ['favorite']
+-> ['sick']
+-> []
+-> ['happy']
+-> ['delicious', 'fast']
+-> []
+-> ['terrible']
+
+Entities in tweets.json:
+-> (McDonalds,)
+-> ()
+-> (McDonalds,)
+-> (McDonalds, Spain)
+-> (The Arch Deluxe,)
+-> ()
+-> (This morning,)
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 3.15
+
+One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.
+ — 'Metamorphosis' by Franz Kafka
+
+I know not all that may be coming, but be it what it will, I'll go to it laughing.
+ — 'Moby-Dick or, The Whale' by Herman Melville
+
+It was the best of times, it was the worst of times.
+ — 'A Tale of Two Cities' by Charles Dickens
+
+The only people for me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved, desirous of everything at the same time, the ones who never yawn or say a commonplace thing, but burn, burn, burn like fabulous yellow roman candles exploding like spiders across the stars.
+ — 'On the Road' by Jack Kerouac
+
+It was a bright cold day in April, and the clocks were striking thirteen.
+ — '1984' by George Orwell
+
+Nowadays people know the price of everything and the value of nothing.
+ — 'The Picture Of Dorian Gray' by Oscar Wilde
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 3.16
+
+Token-level features:
+-> Text: Chick, POS: PROPN, Lemma: Chick, Is Stopword: False, Dependency: compound, Shape: Xxxxx, Is Alpha: True, Is Punct: False
+-> Text: -, POS: PUNCT, Lemma: -, Is Stopword: False, Dependency: punct, Shape: -, Is Alpha: False, Is Punct: True
+-> Text: fil, POS: NOUN, Lemma: fil, Is Stopword: False, Dependency: compound, Shape: xxx, Is Alpha: True, Is Punct: False
+-> Text: -, POS: PUNCT, Lemma: -, Is Stopword: False, Dependency: punct, Shape: -, Is Alpha: False, Is Punct: True
+-> Text: A, POS: PROPN, Lemma: A, Is Stopword: True, Dependency: nsubj, Shape: X, Is Alpha: True, Is Punct: False
+-> Text: is, POS: AUX, Lemma: be, Is Stopword: True, Dependency: ROOT, Shape: xx, Is Alpha: True, Is Punct: False
+-> Text: an, POS: DET, Lemma: an, Is Stopword: True, Dependency: det, Shape: xx, Is Alpha: True, Is Punct: False
+-> Text: American, POS: ADJ, Lemma: american, Is Stopword: False, Dependency: amod, Shape: Xxxxx, Is Alpha: True, Is Punct: False
+-> Text: fast, POS: ADJ, Lemma: fast, Is Stopword: False, Dependency: amod, Shape: xxxx, Is Alpha: True, Is Punct: False
+-> Text: food, POS: NOUN, Lemma: food, Is Stopword: False, Dependency: compound, Shape: xxxx, Is Alpha: True, Is Punct: False
+-> Text: restaurant, POS: NOUN, Lemma: restaurant, Is Stopword: False, Dependency: compound, Shape: xxxx, Is Alpha: True, Is Punct: False
+-> Text: chain, POS: NOUN, Lemma: chain, Is Stopword: False, Dependency: attr, Shape: xxxx, Is Alpha: True, Is Punct: False
+-> Text: headquartered, POS: VERB, Lemma: headquarter, Is Stopword: False, Dependency: acl, Shape: xxxx, Is Alpha: True, Is Punct: False
+-> Text: in, POS: ADP, Lemma: in, Is Stopword: True, Dependency: prep, Shape: xx, Is Alpha: True, Is Punct: False
+-> Text: the, POS: DET, Lemma: the, Is Stopword: True, Dependency: det, Shape: xxx, Is Alpha: True, Is Punct: False
+-> Text: city, POS: NOUN, Lemma: city, Is Stopword: False, Dependency: pobj, Shape: xxxx, Is Alpha: True, Is Punct: False
+-> Text: of, POS: ADP, Lemma: of, Is Stopword: True, Dependency: prep, Shape: xx, Is Alpha: True, Is Punct: False
+-> Text: College, POS: PROPN, Lemma: College, Is Stopword: False, Dependency: compound, Shape: Xxxxx, Is Alpha: True, Is Punct: False
+-> Text: Park, POS: PROPN, Lemma: Park, Is Stopword: False, Dependency: pobj, Shape: Xxxx, Is Alpha: True, Is Punct: False
+-> Text: ,, POS: PUNCT, Lemma: ,, Is Stopword: False, Dependency: punct, Shape: ,, Is Alpha: False, Is Punct: True
+-> Text: Georgia, POS: PROPN, Lemma: Georgia, Is Stopword: False, Dependency: appos, Shape: Xxxxx, Is Alpha: True, Is Punct: False
+-> Text: ,, POS: PUNCT, Lemma: ,, Is Stopword: False, Dependency: punct, Shape: ,, Is Alpha: False, Is Punct: True
+-> Text: specializing, POS: VERB, Lemma: specialize, Is Stopword: False, Dependency: advcl, Shape: xxxx, Is Alpha: True, Is Punct: False
+-> Text: in, POS: ADP, Lemma: in, Is Stopword: True, Dependency: prep, Shape: xx, Is Alpha: True, Is Punct: False
+-> Text: chicken, POS: NOUN, Lemma: chicken, Is Stopword: False, Dependency: compound, Shape: xxxx, Is Alpha: True, Is Punct: False
+-> Text: sandwiches, POS: NOUN, Lemma: sandwich, Is Stopword: False, Dependency: pobj, Shape: xxxx, Is Alpha: True, Is Punct: False
+-> Text: ., POS: PUNCT, Lemma: ., Is Stopword: False, Dependency: punct, Shape: ., Is Alpha: False, Is Punct: True
+-> Text: Sentence, POS: NOUN, Lemma: sentence, Is Stopword: False, Dependency: compound, Shape: Xxxxx, Is Alpha: True, Is Punct: False
+-> Text: number, POS: NOUN, Lemma: number, Is Stopword: False, Dependency: ROOT, Shape: xxxx, Is Alpha: True, Is Punct: False
+-> Text: 2, POS: NUM, Lemma: 2, Is Stopword: False, Dependency: nummod, Shape: d, Is Alpha: False, Is Punct: False
+-> Text: !, POS: PUNCT, Lemma: !, Is Stopword: False, Dependency: punct, Shape: !, Is Alpha: False, Is Punct: True
+
+Sentence-level features:
+-> Sentence: Chick-fil-A is an American fast food restaurant chain headquartered in the city of College Park, Georgia, specializing in chicken sandwiches.
+-> Sentence: Sentence number 2!
+
+Named Entities, Phrases, and Concepts:
+-> Text: Chick, Label: GPE
+-> Text: American, Label: NORP
+-> Text: College Park, Label: GPE
+-> Text: Georgia, Label: GPE
+-> Text: 2, Label: CARDINAL
+
+Noun Chunks:
+-> Text: Chick-fil-A, Root Text: A, Root Dependency: nsubj, Root Head Text: is
+-> Text: an American fast food restaurant chain, Root Text: chain, Root Dependency: attr, Root Head Text: is
+-> Text: the city, Root Text: city, Root Dependency: pobj, Root Head Text: in
+-> Text: College Park, Root Text: Park, Root Dependency: pobj, Root Head Text: of
+-> Text: Georgia, Root Text: Georgia, Root Dependency: appos, Root Head Text: Park
+-> Text: chicken sandwiches, Root Text: sandwiches, Root Dependency: pobj, Root Head Text: in
+-> Text: Sentence number, Root Text: number, Root Dependency: ROOT, Root Head Text: number
+
+Dependency Parse Tree:
+-> Text: Chick, Dependency: compound, Head Text: fil, Children: [-]
+-> Text: -, Dependency: punct, Head Text: Chick, Children: []
+-> Text: fil, Dependency: compound, Head Text: A, Children: [Chick]
+-> Text: -, Dependency: punct, Head Text: A, Children: []
+-> Text: A, Dependency: nsubj, Head Text: is, Children: [fil, -]
+-> Text: is, Dependency: ROOT, Head Text: is, Children: [A, chain, .]
+-> Text: an, Dependency: det, Head Text: chain, Children: []
+-> Text: American, Dependency: amod, Head Text: chain, Children: []
+-> Text: fast, Dependency: amod, Head Text: food, Children: []
+-> Text: food, Dependency: compound, Head Text: restaurant, Children: [fast]
+-> Text: restaurant, Dependency: compound, Head Text: chain, Children: [food]
+-> Text: chain, Dependency: attr, Head Text: is, Children: [an, American, restaurant, headquartered]
+-> Text: headquartered, Dependency: acl, Head Text: chain, Children: [in, specializing]
+-> Text: in, Dependency: prep, Head Text: headquartered, Children: [city]
+-> Text: the, Dependency: det, Head Text: city, Children: []
+-> Text: city, Dependency: pobj, Head Text: in, Children: [the, of]
+-> Text: of, Dependency: prep, Head Text: city, Children: [Park]
+-> Text: College, Dependency: compound, Head Text: Park, Children: []
+-> Text: Park, Dependency: pobj, Head Text: of, Children: [College, ,, Georgia, ,]
+-> Text: ,, Dependency: punct, Head Text: Park, Children: []
+-> Text: Georgia, Dependency: appos, Head Text: Park, Children: []
+-> Text: ,, Dependency: punct, Head Text: Park, Children: []
+-> Text: specializing, Dependency: advcl, Head Text: headquartered, Children: [in]
+-> Text: in, Dependency: prep, Head Text: specializing, Children: [sandwiches]
+-> Text: chicken, Dependency: compound, Head Text: sandwiches, Children: []
+-> Text: sandwiches, Dependency: pobj, Head Text: in, Children: [chicken]
+-> Text: ., Dependency: punct, Head Text: is, Children: []
+-> Text: Sentence, Dependency: compound, Head Text: number, Children: []
+-> Text: number, Dependency: ROOT, Head Text: number, Children: [Sentence, 2, !]
+-> Text: 2, Dependency: nummod, Head Text: number, Children: []
+-> Text: !, Dependency: punct, Head Text: number, Children: []
