@@ -1,0 +1,43 @@
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 4.4
+
+Text: How to preorder the iPhone X
+Spans matched by custom matcher: [iPhone X]
+
+Text: iPhone X is coming
+Spans matched by custom matcher: [iPhone X]
+
+Text: Should I pay $1,000 for the iPhone X?
+Spans matched by custom matcher: [iPhone X]
+
+Text: The iPhone 8 reviews are here
+Spans matched by custom matcher: [iPhone 8]
+
+Text: Your iPhone goes up to 11 today
+Spans matched by custom matcher: []
+
+Text: I need a new phone! Any tips?
+Spans matched by custom matcher: []
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - CHAPTER 4.12
+
+Website spans:
+
+-> Doc1: Reddit partners with Patreon to help creators build communities
+-> Doc1 ents: (Reddit, Patreon)
+
+-> Doc2: PewDiePie smashes YouTube record
+-> Doc2 ents: (YouTube,)
+
+-> Doc3: Reddit founder Alexis Ohanian gave away two Metallica tickets to fans
+-> Doc3 ents: (Reddit,)
+
+Website & Person spans:
+
+-> Doc1: Reddit partners with Patreon to help creators build communities
+-> Doc1 ents: (Reddit, Patreon)
+
+-> Doc2: PewDiePie smashes YouTube record
+-> Doc2 ents: (PewDiePie, YouTube)
+
+-> Doc3: Reddit founder Alexis Ohanian gave away two Metallica tickets to fans
+-> Doc3 ents: (Reddit, Alexis Ohanian)
