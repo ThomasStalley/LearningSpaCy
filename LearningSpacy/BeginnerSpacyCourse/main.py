@@ -1,8 +1,10 @@
 import time
 
 import numpy as np
+import pandas as pd
 import requests
 import spacy
+from spacy.language import Language
 from spacy.matcher import Matcher
 
 # ---------------------------------------------------------------------------------------------------------- Definitions
@@ -13,6 +15,8 @@ SPACY = "...is an open-source software library for advanced natural language pro
 usa_text = open(file="Data/usa.txt", mode="r").read()
 mlk_text = open(file="Data/mlk.txt", mode="r").read()
 aiw_text = open(file="Data/aiw.txt", mode="r").read()
+apple_text = open(file="Data/apple.txt", mode="r").read()
+reuters_text = open(file="Data/reuters.txt", mode="r").read()
 
 # ------------------------------------------------------------------------------------------------ Linguistic Annotation
 nlp = spacy.load("en_core_web_sm")
@@ -126,8 +130,7 @@ if process_shakespeare:
 # IE Paris could be a French city, a Texas city, a Kentucky city or even a persons name!
 
 small_pipeline1 = spacy.load("en_core_web_sm")
-sample_text = "Western Chestertenfieldville was referenced in Mr. Deeds."
-sample_doc1 = small_pipeline1(sample_text)
+sample_doc1 = small_pipeline1(sample_text := "Western Chestertenfieldville was referenced in Mr. Deeds.")
 
 print(f"\nEntities in \"{sample_text}\" found by built in ner step:")
 for ent in sample_doc1.ents:
@@ -233,3 +236,101 @@ matches.sort(key=lambda x: x[1])
 print("\nSpeech pattern#2 matches from Alice in Wonderland text:")
 for match in matches:
     print("->", doc[match[1]:match[2]])
+
+# ---------------------------------------------------------------------------------------------------- Custom Components
+nlp = spacy.load("en_core_web_sm")
+doc = nlp(sample_text := "Britain is a place. Mary is a person.")
+print(f"\nSample text: \"{sample_text}\"")
+print("Entities in sample text:")
+for ent in doc.ents:
+    print("->", ent.text, ent.label_)
+
+
+# This component will be another pipe in the pipeline:
+@Language.component("remove_gpe")
+def remove_gpe(inputted_doc):
+    entities = inputted_doc.ents
+    for entity in entities:
+        if entity.label == "GPE":
+            entities.remove(ent)
+    inputted_doc.ents = entities
+    return inputted_doc
+
+
+nlp.add_pipe("remove_gpe")
+print(f"\nSample text: \"{sample_text}\"")
+print("Entities in sample text (w/ custom component):")
+for ent in doc.ents:
+    print("->", ent.text, ent.label_)
+
+# ------------------------------------------------------------------------------------------------- Financial Case Study
+stocks_df = pd.read_csv("Data/stocks.tsv", sep="\t")
+symbols = stocks_df.Symbol.tolist()
+companies = stocks_df.CompanyName.tolist()
+
+indexes_df = pd.read_csv("Data/indexes.tsv", sep="\t")
+indexes = indexes_df.IndexName.tolist()
+index_symbols = indexes_df.IndexSymbol.tolist()
+
+exchanges_df = pd.read_csv("Data/exchanges.tsv", sep="\t")
+exchanges = exchanges_df.ISOMIC.tolist() + exchanges_df["Google Prefix"].tolist()
+descriptions = exchanges_df.Description.tolist()
+
+patterns = []
+stops = ["two"]
+letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+# Create stock patterns:
+for symbol in symbols:
+    patterns.append({"label": "STOCK", "pattern": symbol})
+    for l in letters:
+        patterns.append({"label": "STOCK", "pattern": symbol + f".{l}"})
+
+# Create company patterns:
+for company in companies:
+    if company not in stops:
+        patterns.append({"label": "COMPANY", "pattern": company})
+        words = company.split()
+        if len(words) > 1:
+            new = " ".join(words[:2])
+            patterns.append({"label": "COMPANY", "pattern": new})
+
+# Create index patterns:
+for index in indexes:
+    patterns.append({"label": "INDEX", "pattern": index})
+    versions = []
+    words = index.split()
+    caps = []
+    for word in words:
+        word = word.lower().capitalize()
+        caps.append(word)
+    versions.append(" ".join(caps))
+    versions.append(words[0])
+    versions.append(caps[0])
+    versions.append(" ".join(caps[:2]))
+    versions.append(" ".join(words[:2]))
+    for version in versions:
+        if version != "NYSE":
+            patterns.append({"label": "INDEX", "pattern": version})
+for symbol in index_symbols:
+    patterns.append({"label": "INDEX", "pattern": symbol})
+
+# Create exchange patterns:
+for d in descriptions:
+    patterns.append({"label": "STOCK_EXCHANGE", "pattern": d})
+for e in exchanges:
+    patterns.append({"label": "STOCK_EXCHANGE", "pattern": e})
+
+financial_nlp = spacy.blank("en")
+financial_ruler = financial_nlp.add_pipe("entity_ruler")
+financial_ruler.add_patterns(patterns)
+
+financial_doc = financial_nlp(reuters_text)
+print("\nEntities in reuters article:")
+for ent in financial_doc.ents:
+    print("->", ent.text, ent.label_)
+
+apple_doc = financial_nlp(apple_text)
+print("\nEntities in apple computers text:")
+for ent in apple_doc.ents:
+    print("->", ent.text, ent.label_)

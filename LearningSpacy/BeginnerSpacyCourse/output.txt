@@ -1,0 +1,311 @@
+First 10 tokens in usa doc:
+-> The
+-> United
+-> States
+-> of
+-> America
+-> (
+-> U.S.A.
+-> or
+-> USA
+-> )
+
+All sentences in usa doc:
+-> The United States of America (U.S.A. or USA), commonly known as the United States (U.S. or US) or America, is a country primarily located in North America.
+-> It consists of 50 states, a federal district, five major unincorporated territories, 326 Indian reservations, and some minor possessions.[j]
+-> At 3.8 million square miles (9.8 million square kilometers), it is the world's third- or fourth-largest country by total area.[d]
+-> The United States shares significant land borders with Canada to the north and Mexico to the south, as well as limited maritime borders with the Bahamas, Cuba, and Russia.[22]
+-> With a population of more than 331 million people, it is the third most populous country in the world.
+-> The national capital is Washington, D.C., and the most populous city is New York.
+
+
+-> Paleo-Indians migrated from Siberia to the North American mainland at least 12,000 years ago, and European colonization began in the 16th century.
+-> The United States emerged from the thirteen British colonies established along the East Coast.
+-> Disputes over taxation and political representation with Great Britain led to the American Revolutionary War (1775–1783), which established independence.
+-> In the late 18th century, the U.S. began expanding across North America, gradually obtaining new territories, sometimes through war, frequently displacing Native Americans, and admitting new states; by 1848, the United States spanned the continent.
+-> Slavery was legal in the southern United States until the second half of the 19th century when the American Civil War led to its abolition.
+-> The Spanish–American War and World War I established the U.S. as a world power, a status confirmed by the outcome of World War II.
+
+
+-> During the Cold War, the United States fought the Korean War and the Vietnam War but avoided direct military conflict with the Soviet Union.
+-> The two superpowers competed in the Space Race, culminating in the 1969 spaceflight that first landed humans on the Moon.
+-> The Soviet Union's dissolution in 1991 ended the Cold War, leaving the United States as the world's sole superpower.
+
+
+-> The United States is a federal republic and a representative democracy with three separate branches of government, including a bicameral legislature.
+-> It is a founding member of the United Nations, World Bank, International Monetary Fund, Organization of American States, NATO, and other international organizations.
+-> It is a permanent member of the United Nations Security Council.
+-> Considered a melting pot of cultures and ethnicities, its population has been profoundly shaped by centuries of immigration.
+-> The country ranks high in international measures of economic freedom, quality of life, education, and human rights, and has low levels of perceived corruption.
+-> However, the country has received criticism concerning inequality related to race, wealth and income, the use of capital punishment, high incarceration rates, and lack of universal health care.
+
+
+-> The United States is a highly developed country, accounts for approximately a quarter of global GDP, and is the world's largest economy.
+-> By value, the United States is the world's largest importer and the second-largest exporter of goods.
+-> Although its population is only 4.2% of the world's total, it holds 29.4% of the total wealth in the world, the largest share held by any country.
+-> Making up more than a third of global military spending, it is the foremost military power in the world; and it is a leading political, cultural, and scientific force internationally.[23]
+
+sentence1: The United States of America (U.S.A. or USA), commonly known as the United States (U.S. or US) or America, is a country primarily located in North America.
+token2 = sentence1[2] = States
+
+token2 attributes:
+-> token2.text = States
+-> token2.left_edge = The
+-> token2.right_edge = America
+-> token2.ent_type_ = GPE
+-> token2.ent_iob_ = I
+-> token2.lemma_ = States
+-> token2.morph = Number=Sing
+-> token2.pos_ = PROPN
+-> token2.dep_ = nsubj
+-> token2.lang_ = en
+
+Tokens in Mike doc:
+-> Mike PROPN nsubj
+-> enjoys VERB ROOT
+-> playing VERB xcomp
+-> football NOUN dobj
+-> ! PUNCT punct
+
+Entities in USA doc:
+-> The United States of America GPE
+-> U.S.A. GPE
+-> USA GPE
+-> the United States GPE
+-> U.S. GPE
+-> US GPE
+-> America GPE
+-> North America LOC
+-> 50 CARDINAL
+-> five CARDINAL
+-> 326 CARDINAL
+-> Indian NORP
+-> 3.8 million square miles QUANTITY
+-> 9.8 million square kilometers QUANTITY
+-> fourth ORDINAL
+-> The United States GPE
+-> Canada GPE
+-> Mexico GPE
+-> Bahamas GPE
+-> Cuba GPE
+-> more than 331 million CARDINAL
+-> third ORDINAL
+-> Washington GPE
+-> D.C. GPE
+-> New York GPE
+-> Paleo-Indians NORP
+-> Siberia LOC
+-> North American NORP
+-> at least 12,000 years ago DATE
+-> European NORP
+-> the 16th century DATE
+-> The United States GPE
+-> thirteen CARDINAL
+-> British NORP
+-> the East Coast LOC
+-> Great Britain GPE
+-> the American Revolutionary War ORG
+-> the late 18th century DATE
+-> U.S. GPE
+-> North America LOC
+-> Native Americans NORP
+-> 1848 DATE
+-> the United States GPE
+-> United States GPE
+-> the second half of the 19th century DATE
+-> the American Civil War ORG
+-> Spanish NORP
+-> World War EVENT
+-> U.S. GPE
+-> World War II EVENT
+-> the Cold War EVENT
+-> the United States GPE
+-> the Korean War EVENT
+-> the Vietnam War EVENT
+-> the Soviet Union GPE
+-> two CARDINAL
+-> the Space Race FAC
+-> 1969 DATE
+-> first ORDINAL
+-> The Soviet Union's GPE
+-> 1991 DATE
+-> the Cold War EVENT
+-> the United States GPE
+-> The United States GPE
+-> three CARDINAL
+-> the United Nations ORG
+-> World Bank ORG
+-> International Monetary Fund ORG
+-> Organization of American States ORG
+-> NATO ORG
+-> the United Nations Security Council ORG
+-> centuries DATE
+-> The United States GPE
+-> approximately a quarter DATE
+-> the United States GPE
+-> second ORDINAL
+-> only 4.2% PERCENT
+-> 29.4% PERCENT
+-> more than a third CARDINAL
+
+Sentences in USA doc:
+-> The United States of America (U.S.A. or USA), commonly known as the United States (U.S. or US) or America, is a country primarily located in North America.
+-> It consists of 50 states, a federal district, five major unincorporated territories, 326 Indian reservations, and some minor possessions.[j]
+-> At 3.8 million square miles (9.8 million square kilometers), it is the world's third- or fourth-largest country by total area.[d]
+-> The United States shares significant land borders with Canada to the north and Mexico to the south, as well as limited maritime borders with the Bahamas, Cuba, and Russia.[22]
+-> With a population of more than 331 million people, it is the third most populous country in the world.
+-> The national capital is Washington, D.C., and the most populous city is New York.
+-> Paleo-Indians migrated from Siberia to the North American mainland at least 12,000 years ago, and European colonization began in the 16th century.
+-> The United States emerged from the thirteen British colonies established along the East Coast.
+-> Disputes over taxation and political representation with Great Britain led to the American Revolutionary War (1775–1783), which established independence.
+-> In the late 18th century, the U.S. began expanding across North America, gradually obtaining new territories, sometimes through war, frequently displacing Native Americans, and admitting new states; by 1848, the United States spanned the continent.
+-> Slavery was legal in the southern United States until the second half of the 19th century when the American Civil War led to its abolition.
+-> The Spanish–American War and World War I established the U.S. as a world power, a status confirmed by the outcome of World War II.
+-> During the Cold War, the United States fought the Korean War and the Vietnam War but avoided direct military conflict with the Soviet Union.
+-> The two superpowers competed in the Space Race, culminating in the 1969 spaceflight that first landed humans on the Moon.
+-> The Soviet Union's dissolution in 1991 ended the Cold War, leaving the United States as the world's sole superpower.
+-> The United States is a federal republic and a representative democracy with three separate branches of government, including a bicameral legislature.
+-> It is a founding member of the United Nations, World Bank, International Monetary Fund, Organization of American States, NATO, and other international organizations.
+-> It is a permanent member of the United Nations Security Council.
+-> Considered a melting pot of cultures and ethnicities, its population has been profoundly shaped by centuries of immigration.
+-> The country ranks high in international measures of economic freedom, quality of life, education, and human rights, and has low levels of perceived corruption.
+-> However, the country has received criticism concerning inequality related to race, wealth and income, the use of capital punishment, high incarceration rates, and lack of universal health care.
+-> The United States is a highly developed country, accounts for approximately a quarter of global GDP, and is the world's largest economy.
+-> By value, the United States is the world's largest importer and the second-largest exporter of goods.
+-> Although its population is only 4.2% of the world's total, it holds 29.4% of the total wealth in the world, the largest share held by any country.
+-> Making up more than a third of global military spending, it is the foremost military power in the world; and it is a leading political, cultural, and scientific force internationally.[23]
+
+Sentence1 from medium USA doc:
+-> The United States of America (U.S.A. or USA), commonly known as the United States (U.S. or US) or America, is a country primarily located in North America.
+
+Token1 from sentence1:
+-> The
+
+Token1's word vector:
+-> [ 1.59222469e-01 -4.17643994e-01 -6.36026978e-01  1.97981071e+00
+ -9.92743075e-01  3.27986062e-01 -1.43436837e+00  3.92762721e-01
+ -2.21372381e-01  1.23972309e+00  1.46654487e+00  9.07576025e-01
+ -3.52612495e-01 -7.64090061e-01 -9.86878335e-01 -9.11738753e-01
+ -6.99107409e-01  1.38432574e+00 -1.03957558e+00 -2.26922795e-01
+ -1.09980154e+00 -2.52399534e-01  2.09237233e-01 -1.43642974e+00
+  1.98636770e+00  4.54234123e-01  8.36412311e-01  1.15134895e-01
+  5.11820614e-03  8.08914542e-01  4.18872684e-01 -1.57853127e+00
+  6.36767507e-01 -9.50180173e-01  5.02419233e-01  1.34429359e+00
+  8.22309032e-02 -1.14305496e-01  1.54729187e-01  2.90426350e+00
+ -3.52549791e-01  7.49374628e-01 -1.52755499e+00  4.65825438e-01
+ -1.63595033e+00  7.50667214e-01  5.89215219e-01  1.65173972e+00
+  7.01108694e-01  2.49644056e-01 -9.34628189e-01 -4.80722249e-01
+  3.71875465e-01  5.87381959e-01 -2.66013771e-01  5.64918339e-01
+ -7.59065628e-01  1.70134127e+00  3.32356721e-01 -7.89465606e-02
+ -4.40568328e-01  8.82627368e-01  7.41947532e-01 -3.90778393e-01
+  6.57645166e-01 -7.68142402e-01 -2.48637915e-01 -1.02533758e+00
+ -1.50129175e+00 -1.33207524e+00 -3.68103087e-01  1.71081305e+00
+ -1.14188612e-01  1.69507354e-01 -9.31923091e-01 -8.19137573e-01
+ -4.44367975e-01 -7.39296317e-01  1.68365389e-01  4.65135992e-01
+ -4.09116626e-01 -1.20210445e+00 -3.78460169e-01 -1.41465437e+00
+  1.88349247e+00  1.26072332e-01  7.10423112e-01 -2.39818931e-01
+  2.27352172e-01 -1.76141500e-01 -2.47895688e-01 -3.68946910e-01
+ -4.31984663e-04 -3.08454454e-01 -4.14540797e-01  7.27797210e-01]
+
+Most similar words to chosen word "country":
+-> country—0,467
+-> nationâs
+-> countries-
+-> continente
+-> Carnations
+-> pastille
+-> бесплатно
+-> Argents
+-> Tywysogion
+-> Teeters
+
+Similarity using doc1.similarity(doc2) etc:
+-> I like salty fries and hamburgers. <-> Fast food tastes very good. 0.691649353055761
+-> salty fries <-> hamburgers 0.6938489079475403
+
+Entities in "Western Chestertenfieldville was referenced in Mr. Deeds." found by built in ner step:
+-> Western Chestertenfieldville LOC
+-> Deeds PERSON
+
+Entities in "Western Chestertenfieldville was referenced in Mr. Deeds." found by custom ruler step (1 pattern):
+-> Western Chestertenfieldville GPE
+-> Deeds PERSON
+
+Entities in "Western Chestertenfieldville was referenced in Mr. Deeds." found by custom ruler step (2 patterns):
+-> Western Chestertenfieldville GPE
+-> Mr. Deeds FILM
+
+Sample Text: "This is an email address: main@exmaple.com"
+LIKE_EMAIL matches:
+-> (16571425990740197027, 6, 7)
+
+PROPER_NOUN matches[:10] in MLK text:
+-> Martin
+-> Luther
+-> King
+-> Jr.
+-> Michael
+-> King
+-> Jr.
+-> January
+-> April
+-> Baptist
+
+PROPER_NOUN + VERB (w/ operator=plus and greedy=longest) matches[:10] in MLK text:
+-> King advanced
+-> King participated
+-> King led
+-> King helped
+-> Director J. Edgar Hoover considered
+-> King won
+-> United States beginning
+
+Speech pattern#1 matches from Alice in Wonderland text:
+-> 'and what is the use of a book,' thought Alice
+-> 'without pictures or conversation?'
+
+Speech pattern#2 matches from Alice in Wonderland text:
+-> 'and what is the use of a book,' thought Alice 'without pictures or conversation?'
+
+Sample text: "Britain is a place. Mary is a person."
+Entities in sample text:
+-> Britain GPE
+-> Mary PERSON
+
+Sample text: "Britain is a place. Mary is a person."
+Entities in sample text (w/ custom component):
+-> Britain GPE
+-> Mary PERSON
+
+Entities in reuters article:
+-> Apple COMPANY
+-> Apple COMPANY
+-> AAPL.O STOCK
+-> Apple COMPANY
+-> Nasdaq INDEX
+-> S&P 500 INDEX
+-> S&P 500 INDEX
+-> ET STOCK
+-> Dow Jones Industrial Average INDEX
+-> S&P 500 INDEX
+-> Nasdaq Composite INDEX
+-> S&P 500 INDEX
+-> JD.com COMPANY
+-> Tencent Music COMPANY
+-> TME.N STOCK
+-> NIO.N STOCK
+-> Kroger COMPANY
+-> KR.N STOCK
+-> NYSE STOCK_EXCHANGE
+-> Nasdaq INDEX
+-> S&P INDEX
+-> Nasdaq COMPANY
+
+Entities in apple computers text:
+-> Apple COMPANY
+-> Apple COMPANY
+-> Apple COMPANY
+-> Apple COMPANY
+-> Apple COMPANY
+-> Apple COMPANY
+-> Apple COMPANY
